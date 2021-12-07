@@ -2,7 +2,7 @@
 
 requires "Dist::Zilla" => "2.100921";
 requires "File::chdir" => "0";
-requires "Module::Signature" => "0";
+requires "Module::Signature" => "0.87";
 
 on 'configure' => sub {
   requires "ExtUtils::MakeMaker" => "0";

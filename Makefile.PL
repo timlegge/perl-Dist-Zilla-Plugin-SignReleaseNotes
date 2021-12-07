@@ -17,7 +17,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "Dist::Zilla" => "2.100921",
     "File::chdir" => 0,
-    "Module::Signature" => 0
+    "Module::Signature" => "0.87"
   },
   "VERSION" => "0.0001",
   "test" => {
@@ -29,7 +29,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Dist::Zilla" => "2.100921",
   "File::chdir" => 0,
-  "Module::Signature" => 0
+  "Module::Signature" => "0.87"
 );
 
 
