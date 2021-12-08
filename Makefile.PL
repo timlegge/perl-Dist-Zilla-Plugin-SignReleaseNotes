@@ -19,7 +19,7 @@ my %WriteMakefileArgs = (
     "File::chdir" => 0,
     "Module::Signature" => "0.87"
   },
-  "VERSION" => "0.0001",
+  "VERSION" => "0.0002",
   "test" => {
     "TESTS" => "t/*.t"
   }
