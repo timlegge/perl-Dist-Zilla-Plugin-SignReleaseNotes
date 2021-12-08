@@ -2,6 +2,12 @@ Revision history for Dist-Zilla-Plugin-SignReleaseNotes
 
 {{$NEXT}}
 
+0.0003 -- Wed Dec 08 19:06:41 AST 2021
+
+  - 1cd218b Bump version number
+  - 4a416f5 Damn it - tags in wrong order
+  - 5ff8be8 v0.0002
+
 0.0002 -- Wed Dec 08 18:45:38 AST 2021
 
   - c660580 Update .gitignore
