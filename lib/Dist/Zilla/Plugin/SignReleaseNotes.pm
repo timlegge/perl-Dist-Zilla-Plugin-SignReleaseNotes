@@ -65,7 +65,7 @@ sub get_git_checksums_and_titles {
     return;
   }
 
-  my $range = "$tags[0]..$tags[1]";
+  my $range = "$tags[1]..$tags[0]";
   my @sha1s_and_titles = $git->RUN('rev-list', '--tags', $range , '--abbrev-commit' , {pretty=>'oneline' }, '--date-order');
 
   return @sha1s_and_titles;
