@@ -57,18 +57,16 @@ sub get_git_checksums_and_titles {
 
   use Git::Wrapper;
   my $git = Git::Wrapper->new('./');
-  my @tag;
-  eval {
-    @tag = $git->describe( qw/ --tags --abbrev=0 / );
-  };
 
-  if (($@ =~ /fatal: No names found, cannot describe anything/) || (@tag eq 0)){
+  my @tags = $git->RUN('for-each-ref', 'refs/tags/*', '--sort=-taggerdate', '--count=2', '--format=%(refname:short)');
+
+  if (($@ =~ /fatal: No names found, cannot describe anything/) || (@tags eq 0)){
     warn "[SignReleaseNotes]: No existing tag - tag must already exist!";
     return;
   }
 
-  my $range = "$tag[0]..HEAD";
-  my @sha1s_and_titles = $git->RUN('rev-list', $range , '--abbrev-commit' , {pretty=>'oneline' });
+  my $range = "$tags[0]..$tags[1]";
+  my @sha1s_and_titles = $git->RUN('rev-list', '--tags', $range , '--abbrev-commit' , {pretty=>'oneline' }, '--date-order');
 
   return @sha1s_and_titles;
 
