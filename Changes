@@ -2,6 +2,12 @@ Revision history for Dist-Zilla-Plugin-SignReleaseNotes
 
 {{$NEXT}}
 
+0.0004 -- Fri Feb 04 21:42:40 AST 2022
+
+  - 9000d39 Increment version number
+  - 1835a25 rev-list --tags matching commits that it should not
+  - 2beb53c v0.0003
+
 0.0003 -- Wed Dec 08 19:06:41 AST 2021
 
   - 1cd218b Bump version number
