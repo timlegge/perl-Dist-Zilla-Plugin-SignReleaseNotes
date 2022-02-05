@@ -3,7 +3,7 @@ NAME
     notes file
 
 VERSION
-    version 0.0003
+    version 0.0004
 
 DESCRIPTION
     This plugin will sign a 'Release' file that includes:
@@ -70,7 +70,7 @@ AUTHOR
     Timothy Legge
 
 COPYRIGHT AND LICENSE
-    This software is copyright (c) 2021 by Timothy Legge.
+    This software is copyright (c) 2022 by Timothy Legge.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.
