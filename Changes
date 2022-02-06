@@ -2,6 +2,12 @@ Revision history for Dist-Zilla-Plugin-SignReleaseNotes
 
 {{$NEXT}}
 
+0.0006 -- Sun Feb 06 11:29:07 AST 2022
+
+  - dd458e2 Update version
+  - 3249fd6 Fix typo in sample
+  - 1172bff v0.0005
+
 0.0005 -- Sun Feb 06 11:16:06 AST 2022
 
   - eda2594 Add sample outpput to pod
