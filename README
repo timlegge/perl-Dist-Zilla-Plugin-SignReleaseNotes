@@ -3,7 +3,7 @@ NAME
     notes file
 
 VERSION
-    version 0.0005
+    version 0.0006
 
 DESCRIPTION
     This plugin will sign a 'Release' file that includes:
@@ -20,7 +20,7 @@ DESCRIPTION
     "dist.ini" file
 
 SAMPLE OUTPUT
-            <-----BEGIN PGP SIGNED MESSAGE-----
+            -----BEGIN PGP SIGNED MESSAGE-----
             Hash: RIPEMD160
 
             Dist::Zilla::Plugin::SignReleaseNotes

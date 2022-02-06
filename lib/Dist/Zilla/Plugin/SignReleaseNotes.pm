@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Plugin::SignReleaseNotes;
 
-our $VERSION = '0.0005';
+our $VERSION = '0.0006';
 
 # ABSTRACT: Create and signs a 'Release' notes file
 use Moose;
