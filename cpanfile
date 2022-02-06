@@ -6,6 +6,7 @@ requires "File::chdir" => "0";
 requires "Git::Wrapper" => "0.48";
 requires "Module::Signature" => "0.87";
 requires "Moose" => "2.2014";
+requires "perl" => "5.008";
 
 on 'configure' => sub {
   requires "ExtUtils::MakeMaker" => "0";

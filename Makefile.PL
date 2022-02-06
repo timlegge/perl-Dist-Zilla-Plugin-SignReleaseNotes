@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-
+use 5.008;
 
 use ExtUtils::MakeMaker;
 
@@ -13,6 +13,7 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Dist-Zilla-Plugin-SignReleaseNotes",
   "LICENSE" => "perl",
+  "MIN_PERL_VERSION" => "5.008",
   "NAME" => "Dist::Zilla::Plugin::SignReleaseNotes",
   "PREREQ_PM" => {
     "Digest::SHA" => "6.02",
