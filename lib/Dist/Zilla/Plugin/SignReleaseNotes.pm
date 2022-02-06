@@ -158,7 +158,7 @@ This plugin should appear after any other AfterBuild plugin in your C<dist.ini> 
 
 =over
 
-    <-----BEGIN PGP SIGNED MESSAGE-----
+    -----BEGIN PGP SIGNED MESSAGE-----
     Hash: RIPEMD160
 
     Dist::Zilla::Plugin::SignReleaseNotes
