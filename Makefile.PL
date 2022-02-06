@@ -15,11 +15,14 @@ my %WriteMakefileArgs = (
   "LICENSE" => "perl",
   "NAME" => "Dist::Zilla::Plugin::SignReleaseNotes",
   "PREREQ_PM" => {
+    "Digest::SHA" => "6.02",
     "Dist::Zilla" => "2.100921",
     "File::chdir" => 0,
-    "Module::Signature" => "0.87"
+    "Git::Wrapper" => "0.48",
+    "Module::Signature" => "0.87",
+    "Moose" => "2.2014"
   },
-  "VERSION" => "0.0004",
+  "VERSION" => "0.0005",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -27,9 +30,12 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
+  "Digest::SHA" => "6.02",
   "Dist::Zilla" => "2.100921",
   "File::chdir" => 0,
-  "Module::Signature" => "0.87"
+  "Git::Wrapper" => "0.48",
+  "Module::Signature" => "0.87",
+  "Moose" => "2.2014"
 );
 
 
