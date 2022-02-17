@@ -19,11 +19,11 @@ my %WriteMakefileArgs = (
     "Digest::SHA" => "6.02",
     "Dist::Zilla" => "2.100921",
     "File::chdir" => 0,
-    "Git::Wrapper" => "0.48",
+    "Git::Wrapper" => "0.048",
     "Module::Signature" => "0.87",
     "Moose" => "2.2014"
   },
-  "VERSION" => "0.0006",
+  "VERSION" => "0.0007",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -34,7 +34,7 @@ my %FallbackPrereqs = (
   "Digest::SHA" => "6.02",
   "Dist::Zilla" => "2.100921",
   "File::chdir" => 0,
-  "Git::Wrapper" => "0.48",
+  "Git::Wrapper" => "0.048",
   "Module::Signature" => "0.87",
   "Moose" => "2.2014"
 );
