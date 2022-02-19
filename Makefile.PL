@@ -23,7 +23,7 @@ my %WriteMakefileArgs = (
     "Module::Signature" => "0.87",
     "Moose" => "2.2014"
   },
-  "VERSION" => "0.0007",
+  "VERSION" => "0.0008",
   "test" => {
     "TESTS" => "t/*.t"
   }
