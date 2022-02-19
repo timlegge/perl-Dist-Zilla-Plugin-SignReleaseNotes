@@ -11,6 +11,7 @@ use Exporter qw(import);
 with 'Dist::Zilla::Role::AfterRelease';
 
 has sign => (is => 'ro', default => 'always');
+has hash_alg => (is => 'ro', default => 'sha256');
 
 sub do_sign {
   my $self      = shift;
@@ -77,7 +78,7 @@ sub get_checksum {
   my $filename = shift;
 
   use Digest::SHA;
-  my $sha = Digest::SHA->new('sha256');
+  my $sha = Digest::SHA->new($self->{hash_alg});
   my $digest;
   if ( -e $filename ) {
       open my $fh, '<:raw', $filename  or die "$filename: $!";
@@ -118,7 +119,7 @@ sub create_release_file {
   }
 
   $file .= "\n";
-  $file .= "SHA256 hash of CPAN release\n";
+  $file .= uc($self->{hash_alg}) . " hash of CPAN release\n";
   $file .= "\n";
   $file .= "$digest *$filename\n";
   $file .= "\n";
@@ -141,12 +142,20 @@ __PACKAGE__->meta->make_immutable;
 __END__
 =pod
 
+=head1 SYNOPSIS
+
+In your F<dist.ini>:
+
+    [SignReleaseNotes]
+    sign = always           ; default is always
+    sig_alg = sha512        ; default is sha256
+
 =head1 DESCRIPTION
 
 This plugin will sign a 'Release' file that includes:
 
   1. Git commits since the last tag
-  2. the sha256 checksum of the file that is being distributed to CPAN
+  2. the sha checksum of the file that is being distributed to CPAN
 
 the file is then signed using Module::Signature.
 
@@ -204,6 +213,11 @@ If C<always> then the 'Release' file will be signed after the release. Default i
 
 This attribute can be overridden by an environment variable C<DZSIGN>
 
+=item hash_alg
+
+A string value for the B<Digest::SHA> supported hash algorithm to use for the hash of the
+cpan upload file.
+
 =back
 
 =head1 METHODS
@@ -233,7 +247,7 @@ most recent tag that was found in the repo.
 =item get_checksum
 
 Get's the checksum of the file being released.  Expects the filename and returns
-the checksum (currently sha256 only).
+the checksum with the requested Digest::SHA algorithim.
 
 =item get_name
 
