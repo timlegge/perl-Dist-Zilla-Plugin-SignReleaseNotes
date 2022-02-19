@@ -61,13 +61,14 @@ sub get_git_checksums_and_titles {
 
   my @tags = $git->RUN('for-each-ref', 'refs/tags/*', '--sort=-taggerdate', '--count=2', '--format=%(refname:short)');
 
-  if (($@ =~ /fatal: No names found, cannot describe anything/) || (@tags eq 0)){
-    warn "[SignReleaseNotes]: No existing tag - tag must already exist!";
-    return;
-  }
+  my @sha1s_and_titles;
 
-  my $range = "$tags[1]...$tags[0]";
-  my @sha1s_and_titles = $git->RUN('log', {pretty=>'%h %s' }, $range);
+  if ((scalar @tags) lt 2) {
+    @sha1s_and_titles = $git->RUN('log', {pretty=>'%h %s' });
+  } else {
+    my $range = "$tags[1]...$tags[0]";
+    @sha1s_and_titles = $git->RUN('log', {pretty=>'%h %s' }, $range);
+  }
 
   return @sha1s_and_titles;
 
